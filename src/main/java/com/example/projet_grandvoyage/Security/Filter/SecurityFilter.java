@@ -16,6 +16,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import com.example.projet_grandvoyage.*;
+import com.example.projet_grandvoyage.User.*;
+
 
 @WebFilter("/*")
 public class SecurityFilter implements Filter {
@@ -47,10 +49,10 @@ public class SecurityFilter implements Filter {
 
         if (loginedUser != null) {
             // User Name
-            String userName = loginedUser.getUserName();
+            String userName = loginedUser.getUname();
 
             //List<String> roles = loginedUser.getRoles();
-            String role = loginedUser.getRoles();
+            String role = loginedUser.getRole();
 
             // Envelopper l'ancienne demande (request) par une nouvelle demande avec les informations userName et Roles.
             wrapRequest = new UserRoleRequestWrapper(userName, role, request);

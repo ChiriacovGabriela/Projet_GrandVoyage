@@ -15,9 +15,9 @@
 
 <jsp:include page="_menu.jsp"></jsp:include>
 
-<h3>Hello: ${loginedUser.userName}</h3>
+<h3>Hello: ${loginedUser.uname}</h3>
 
-User Name: <b>${loginedUser.userName}</b>
+User Name: <b>${loginedUser.uname}</b>
 <br />
 Gender: ${loginedUser.gender } <br />
 

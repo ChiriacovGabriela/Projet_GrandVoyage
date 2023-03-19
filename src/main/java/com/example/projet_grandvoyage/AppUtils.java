@@ -5,7 +5,7 @@ import java.util.Map;
 
 import jakarta.servlet.http.HttpSession;
 
-import com.example.projet_grandvoyage.*;
+import com.example.projet_grandvoyage.User.*;
 
 public class AppUtils {
 

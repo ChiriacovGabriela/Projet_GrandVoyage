@@ -24,6 +24,14 @@
 <a href="${pageContext.request.contextPath}/logout">
     Logout
 </a>
+||
+<a href="${pageContext.request.contextPath}/Register">
+    Register
+</a>
+||
+<a href="${pageContext.request.contextPath}/update">
+    Update
+</a>
 
 &nbsp;
-<span style="color:red">[ ${loginedUser.userName} ]</span>
+<span style="color:red">[ ${loginedUser.uname} ]</span>

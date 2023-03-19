@@ -13,7 +13,8 @@ public class SecurityUtils {
     public static boolean isSecurityPage(HttpServletRequest request) {
         String urlPattern = UrlPatternUtils.getUrlPattern(request);
 
-        Set<String> roles = SecurityConfig.getAllAppRoles();
+
+        Set<String>roles = SecurityConfig.getAllAppRoles();
 
         for (String role : roles) {
             List<String> urlPatterns = SecurityConfig.getUrlPatternsForRole(role);

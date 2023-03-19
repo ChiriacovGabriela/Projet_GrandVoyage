@@ -5,13 +5,14 @@ import java.sql.SQLException;
 
 import com.example.projet_grandvoyage.AppUtils;
 import com.example.projet_grandvoyage.Persistence.DataDAO;
-import com.example.projet_grandvoyage.UserAccount;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+
+import com.example.projet_grandvoyage.User.*;
 
 
 @WebServlet(name="LoginServlet", value = "/login")
