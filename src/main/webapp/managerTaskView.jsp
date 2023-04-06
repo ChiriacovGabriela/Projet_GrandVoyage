@@ -18,7 +18,17 @@
 
 <h3>Manager Task</h3>
 
-Hello, This is a protected page!
+<h1>Add a trip</h1>
+<form action="ManagerTaskServlet" method="post" >
+  <label for="nameDestination">Destination :</label>
+  <input type="text" name="nameDestination" id="nameDestination"><br>
+  <label for="description">Description :</label>
+  <textarea name="description" id="description"></textarea><br>
+  <label for="price"> Price :</label>
+  <input type="number" name="price" id="price"><br>
+  <button type="submit" value="ManagerTaskServlet">Add</button>
+</form>
+
 
 </body>
 </html>

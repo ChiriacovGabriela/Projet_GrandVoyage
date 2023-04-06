@@ -4,13 +4,13 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class DBConnection {
-    protected static String dburl = "jdbc:mysql://localhost:8889/GrandVoyage?autoReconnect=true&useSSL=false";
-    protected static String dbuname = "root";
-    protected static String dbpassword = "root";
+public class DBConnection implements DatabaseConnectionInterface {
+    private static String dburl = "jdbc:mysql://localhost:8889/GrandVoyage?autoReconnect=true&useSSL=false";
+    private static String dbuname = "root";
+    private static String dbpassword = "root";
 
-
-    public static Connection getConnect() {
+    @Override
+    public Connection getConnect() {
         Connection con = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
