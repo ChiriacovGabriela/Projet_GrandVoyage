@@ -30,6 +30,7 @@ public class RegisterDao {
             result="Data Not Entered Successfully";
             e.printStackTrace();
         }
+        dbConnection.closeConnection(con);
         return result;
     }
 

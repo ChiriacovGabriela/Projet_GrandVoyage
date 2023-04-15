@@ -24,4 +24,15 @@ public class DBConnection implements DatabaseConnectionInterface {
         }
         return null;
     }
+
+    @Override
+    public void closeConnection(Connection con) {
+        try{
+            if(con != null && !con.isClosed()){
+                con.close();
+            }
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+    }
 }

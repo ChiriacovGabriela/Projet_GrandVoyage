@@ -1,7 +1,10 @@
 package com.example.projet_grandvoyage.Servlets;
 
 import java.io.IOException;
+import java.util.List;
+import com.example.projet_grandvoyage.Persistence.*;
 
+import com.example.projet_grandvoyage.Trip.Trip;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -20,11 +23,17 @@ public class ClientTaskServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        TripDAO tripDAO = new TripDAO();
 
-        RequestDispatcher dispatcher //
+        List<Trip> trips = tripDAO.listTrips();
+        request.setAttribute("trips", trips);
+        request.getRequestDispatcher("clientTaskView.jsp").forward(request,response);
+
+
+        /*RequestDispatcher dispatcher //
                 = this.getServletContext()//
                 .getRequestDispatcher("/clientTaskView.jsp");
-        dispatcher.forward(request, response);
+        dispatcher.forward(request, response);*/
     }
 
     @Override

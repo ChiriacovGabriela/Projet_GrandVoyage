@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface TripDAOInterface {
 
-    String addTrip(Trip trip);
+    void addTrip(Trip trip);
     List<Trip> listTrips();
 
 }
