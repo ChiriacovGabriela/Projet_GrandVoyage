@@ -13,7 +13,7 @@ public class RegisterDao {
 
     public String insert(UserAccount user) {
         DBConnection dbConnection = new DBConnection();
-        Connection con = dbConnection.getConnection();
+        Connection con = dbConnection.getConnect();
         String sql = "insert into grandvoyage.user values(?,?,?,?,?,?,?)";
         String result="Data Entered Successfully";
         try {
@@ -31,8 +31,9 @@ public class RegisterDao {
             e.printStackTrace();
         }
         return result;
-
     }
+
+
 }
 
 

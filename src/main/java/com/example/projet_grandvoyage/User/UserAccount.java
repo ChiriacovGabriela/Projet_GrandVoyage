@@ -3,16 +3,16 @@ package com.example.projet_grandvoyage.User;
 public class UserAccount {
     public static final String GENDER_MALE = "M";
     public static final String GENDER_FEMALE = "F";
+    //private Integer id;
     private String uname,password,email,phone,address,gender,role;
 
 
-    public UserAccount() {
-
-    }
+    public UserAccount() {}
     public UserAccount(String uname, String password, String email, String phone, String address,
                        String gender, String role)
     {
         super();
+        //this.id = id;
         this.uname = uname;
         this.password = password;
         this.email = email;
@@ -22,6 +22,12 @@ public class UserAccount {
         this.role = role;
 
     }
+    /*public Integer getId() {
+        return id;
+    }
+    public void setId(Integer id) {
+        this.id = id;
+    }*/
 
     public String getUname() {
         return uname;

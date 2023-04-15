@@ -1,16 +1,10 @@
-<%--
-  Created by IntelliJ IDEA.
-  com.example.projet_grandvoyage.User: andra
-  Date: 19/03/2023
-  Time: 12:22
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
   <title>Register a member</title>
 </head>
 <body>
+<jsp:include page="_menu.jsp"></jsp:include>
 <form action="Register" method="post">
   <table>
     <tr>
@@ -50,11 +44,11 @@
       <td>Role</td>
       <td>
       <div>
-        <input type="radio" id="CLIENT" name="roles" value="CLIENT">
+        <input type="radio" id="CLIENT" name="role" value="CLIENT">
         <label for="CLIENT">CLIENT</label>
       </div>
       <div>
-        <input type="radio" id="MANAGER" name="roles" value="MANAGER">
+        <input type="radio" id="MANAGER" name="role" value="MANAGER">
         <label for="MANAGER">MANAGER</label>
       </div>
       </td>
