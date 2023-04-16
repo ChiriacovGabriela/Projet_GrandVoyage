@@ -70,6 +70,7 @@
 </form>
 
 
+
 <h2>List of available trips </h2>
 <table>
   <tr>
@@ -78,26 +79,49 @@
     <th>Description</th>
     <th>Price</th>
   </tr>
+
   <%
     TripDAO tripDAO = new TripDAO();
     List<Trip> tripList = tripDAO.listTrips();
     for(Trip trip: tripList){
   %>
+  <h2>Edit Trip <%= trip.getName() %></h2>
+  <form action="managerTask" method="post">
+    <input type="hidden" name="action" value="update">
+    <input type="hidden" name="name" value="<%= trip.getName() %>">
+    <label for="description">Description:</label>
+    <input type="text" name="description" value="<%= trip.getDescription() %>"><br>
+    <label for="price">Price:</label>
+    <input type="text" name="price" value="<%= trip.getPrice() %>"><br>
+    <label for="nameDestination">Destination:</label>
+    <input type="text" name="nameDestination" value="<%= trip.getDestination().getName() %>"><br>
+    <input type="submit" value="Update">
+  </form>
     <tr>
       <td><%= trip.getName() %></td>
       <td><%= trip.getDestination().getName() %></td>
       <td><%= trip.getDescription() %></td>
       <td><%= trip.getPrice() %></td>
       <td>
-        <form action="managerTask" methode="post">
-          <input type="hidden" name="trip" value="<%= trip.getName() %>"/>
-          <input type="hidder" name="action" value="delete"/>
-          <input type="submit" value="Supprimer"/>
-        </form>
+
       </td>
     </tr>
  <%}%>
 </table>
+
+<h1>Delete Trip</h1>
+<form action="managerTask" method="post">
+  <table>
+    <tr>
+      <td>Trip Name:</td>
+      <td><input type="text" name="name" /></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><input type="submit" value="Delete" name="action" /></td>
+    </tr>
+  </table>
+</form>
 
 
 </body>
