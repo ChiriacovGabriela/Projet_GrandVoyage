@@ -16,31 +16,42 @@
 </head>
 <body>
 <jsp:include page="_menu.jsp"></jsp:include>
-<h2>List of available trips </h2>
-<form action="orderNow" method="post">
-<table>
-  <tr>
-    <th> Name </th>
-    <th>Destination</th>
-    <th>Description</th>
-    <th>Price</th>
-    <th></th>
-  </tr>
-  <%
-    TripDAO tripDAO = new TripDAO();
-    List<Trip> tripList = tripDAO.listTrips();
-    for(Trip trip: tripList){
-  %>
-  <tr>
-    <td><%= trip.getName() %></td>
-    <td><%= trip.getDestination().getName() %></td>
-    <td><%= trip.getDescription() %></td>
-    <td><%= trip.getPrice() %></td>
-    <td><button type="submit">Buy</button></td>
-  </tr>
-  <%}%>
-</table>
+
+
+<h2>List of available trips</h2>
+<form action="cart" method="post">
+  <table>
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th>Destination</th>
+      <th>Description</th>
+      <th>Price</th>
+    </tr>
+    <%
+      TripDAO tripDAO = new TripDAO();
+      List<Trip> trips = tripDAO.listTrips();
+      for (Trip trip : trips) {
+    %>
+    <tr>
+      <td>
+        <input type="checkbox" name="selectedTrips" value="<%= trip.getName() %>">
+      </td>
+      <td><%= trip.getName() %></td>
+      <td><%= trip.getDestination().getName() %></td>
+      <td><%= trip.getDescription() %></td>
+      <td><%= trip.getPrice() %></td>
+    </tr>
+    <%
+      }
+    %>
+  </table>
+  <input type="submit" name="action" value="Add to Cart">
 </form>
+
+
+
+
 
 </body>
 </html>

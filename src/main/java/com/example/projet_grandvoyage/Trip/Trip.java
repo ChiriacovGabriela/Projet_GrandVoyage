@@ -6,7 +6,6 @@ import java.util.Date;
 
 public class Trip {
     private Destination destination;
-    //private String name;
     private String description;
 
     private double price;
@@ -20,10 +19,6 @@ public class Trip {
         this.destination = destination;
         this.description = description;
         this.price = price;
-    }
-
-    public Trip() {
-
     }
 
     public Destination getDestination() {

@@ -24,9 +24,9 @@ public class ClientTaskServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         TripDAO tripDAO = new TripDAO();
-
         List<Trip> trips = tripDAO.listTrips();
         request.setAttribute("trips", trips);
+
         request.getRequestDispatcher("clientTaskView.jsp").forward(request,response);
 
     }
