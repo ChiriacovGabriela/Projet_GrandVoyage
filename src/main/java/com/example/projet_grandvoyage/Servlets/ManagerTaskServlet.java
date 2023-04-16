@@ -45,7 +45,7 @@ public class ManagerTaskServlet extends HttpServlet {
         Trip trip;
         String action = request.getParameter("action");
 
-        if (action.contentEquals("delete")){
+        if (action.contentEquals("Delete")){
             String tripNameToDelete = request.getParameter("name");
             tripDAO.deleteTrip(tripNameToDelete);
             response.sendRedirect("managerTaskView.jsp");

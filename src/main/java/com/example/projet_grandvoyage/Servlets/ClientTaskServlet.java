@@ -28,12 +28,6 @@ public class ClientTaskServlet extends HttpServlet {
         List<Trip> trips = tripDAO.listTrips();
         request.setAttribute("trips", trips);
         request.getRequestDispatcher("clientTaskView.jsp").forward(request,response);
-
-
-        /*RequestDispatcher dispatcher //
-                = this.getServletContext()//
-                .getRequestDispatcher("/clientTaskView.jsp");
-        dispatcher.forward(request, response);*/
     }
 
     @Override
