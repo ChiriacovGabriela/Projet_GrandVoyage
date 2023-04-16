@@ -29,8 +29,6 @@ public class UpdateServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-
-
         String name=request.getParameter("uname");
         String password=request.getParameter("password");
         String email=request.getParameter("email");

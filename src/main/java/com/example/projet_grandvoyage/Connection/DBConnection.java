@@ -5,7 +5,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 
-public class DBConnection {
+
+public class DBConnection implements DatabaseConnectionInterface{
     private static String dburl = "jdbc:mysql://localhost:3306/grandvoyage?autoReconnect=true&useSSL=false";
     private static String dbuname = "root";
     private static String dbpassword = "";
@@ -24,5 +25,16 @@ public class DBConnection {
             e.printStackTrace();
         }
         return null;
+    }
+
+
+    public void closeConnection(Connection con) {
+        try{
+            if(con != null && !con.isClosed()){
+                con.close();
+            }
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
     }
 }
