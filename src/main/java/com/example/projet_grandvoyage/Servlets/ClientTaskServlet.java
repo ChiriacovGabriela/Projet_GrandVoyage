@@ -5,7 +5,6 @@ import java.util.List;
 import com.example.projet_grandvoyage.Persistence.*;
 
 import com.example.projet_grandvoyage.Trip.Trip;
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -28,7 +27,6 @@ public class ClientTaskServlet extends HttpServlet {
         request.setAttribute("trips", trips);
 
         request.getRequestDispatcher("clientTaskView.jsp").forward(request,response);
-
     }
 
     @Override
